@@ -12,44 +12,38 @@ Algoritmo "Exercicio6"
 //Caso seja uma opção inválida: Produto inexistente.
 
 Var
-   opcao: Inteiro
+   opcao: Inteiro   // armazena a opção escolhida pelo cliente
 
 Inicio
-   // Menu de opções
+   // Exibe o menu de opções
    Escreval("===== Sistema de Pedidos =====")
    Escreval("1 - X-Burguer")
    Escreval("2 - Pizza")
    Escreval("3 - Batata")
    Escreval("4 - Refrigerante")
    Escreval("5 - Sorvete")
-   Escreval("Digite a opção desejada: ")
+   Escreval("Digite a opção: ")
    Leia(opcao)
 
-   // Identifica o produto e preço
-   Se (opcao = 1) entao
-      Escreval("Produto: X-Burguer")
-      Escreval("Preço: R$ 15,00")
-   Senao
-      Se (opcao = 2) entao
+   // Seleciona o produto conforme a opção
+   escolha opcao
+      caso 1
+         Escreval("Produto: X-Burguer")
+         Escreval("Preço: R$ 15,00")
+      caso 2
          Escreval("Produto: Pizza")
          Escreval("Preço: R$ 35,00")
-      Senao
-         Se (opcao = 3) entao
-            Escreval("Produto: Batata")
-            Escreval("Preço: R$ 10,00")
-         Senao
-            Se (opcao = 4) entao
-               Escreval("Produto: Refrigerante")
-               Escreval("Preço: R$ 8,00")
-            Senao
-               Se (opcao = 5) entao
-                  Escreval("Produto: Sorvete")
-                  Escreval("Preço: R$ 12,00")
-               Senao
-                  Escreval("Produto inexistente.")
-               FimSe
-            FimSe
-         FimSe
-      FimSe
-   FimSe
+      caso 3
+         Escreval("Produto: Batata")
+         Escreval("Preço: R$ 10,00")
+      caso 4
+         Escreval("Produto: Refrigerante")
+         Escreval("Preço: R$ 8,00")
+      caso 5
+         Escreval("Produto: Sorvete")
+         Escreval("Preço: R$ 12,00")
+      outrocaso   // qualquer valor diferente de 1 a 5
+         Escreval("Produto inexistente.")
+   fimescolha
+
 FimAlgoritmo

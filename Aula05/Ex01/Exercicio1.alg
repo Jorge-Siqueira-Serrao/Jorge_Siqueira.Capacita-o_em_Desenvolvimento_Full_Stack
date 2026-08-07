@@ -1,5 +1,4 @@
 Algoritmo "Exercicio1"
-
 // Autor(a): Jorge Siqueira Serrão
 // Data: 05/08/2026
 
@@ -23,14 +22,14 @@ Inicio
    // Exibe o valor do IMC com duas casas decimais
    Escreval("IMC: ", imc:1:2)
 
-   // Classificação
+   // Classificação com faixas contínuas (usando < 25 e < 30 para evitar frestas)
    Se (imc < 18.5) entao
       Escreval("Classificação: Abaixo do peso")
    Senao
-      Se (imc <= 24.9) entao
+      Se (imc < 25) entao
          Escreval("Classificação: Peso normal")
       Senao
-         Se (imc <= 29.9) entao
+         Se (imc < 30) entao
             Escreval("Classificação: Sobrepeso")
          Senao
             Escreval("Classificação: Obesidade")
