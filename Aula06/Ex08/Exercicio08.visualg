@@ -1,0 +1,25 @@
+algoritmo "Exercicio08"
+
+// Autor(a): Jorge Siqueira Serrão
+// Data: 09/08/2026
+
+//Exercício 8 –Número Positivo: Solicite ao usuário um número inteiro, repita a leitura até que seja informado um número
+//maior que zero. Depois exiba o número digitado.
+
+var
+   numero: Inteiro
+
+inicio
+   Repita
+      Escreval("Digite um número inteiro positivo: ")
+      Leia(numero)
+      
+      Se (numero <= 0) Entao
+         Escreval("Número inválido! Digite um valor maior que zero.")
+      FimSe
+   Ate (numero > 0)
+
+   // Exibe o número válido
+   Escreval("Número digitado: ", numero)
+
+fimalgoritmo

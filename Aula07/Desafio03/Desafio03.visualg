@@ -1,0 +1,41 @@
+algoritmo "Desafio03"
+
+// Autor(a): Jorge Siqueira Serrão
+// Data: 09/08/2026
+
+//Desafio 3 —Comissão da equipe de vendas:Crie um algoritmo que calcule a comissão de uma equipe de 5 vendedores,sabendo que 
+//cada um recebe 5% sobre o valor que vendeu no mês. O algoritmo deve receber o valor vendido por cada um dos 5 vendedores, armazenado 
+//em um vetor, calcular e exibir a comissão de cada um, e ao final exibir também o total vendido por toda a equipe.
+
+var
+   vendas: vetor[0..4] de Real   // valor vendido por cada vendedor
+   comissao: Real                // comissão de cada vendedor (5%)
+   totalVendas: Real             // soma de todas as vendas
+   i: Inteiro                    // contador
+
+inicio
+   // Inicializa o total
+   totalVendas <- 0
+
+   //Entrada dos valores vendidos -----
+   Escreval("===== COMISSÃO DA EQUIPE DE VENDAS =====")
+   Para i de 0 ate 4 faca
+      Escreval("Digite o valor vendido pelo vendedor ", i + 1, ": R$ ")
+      Leia(vendas[i])
+   FimPara
+
+   //Exibição das comissões individuais
+   Escreval("")
+   Escreval("----- COMISSÕES INDIVIDUAIS (5%) -----")
+   Para i de 0 ate 4 faca
+      comissao <- vendas[i] * 0.05   // 5% = 5/100 = 0.05
+      Escreval("Vendedor ", i + 1, ": R$ ", vendas[i]:1:2, " vendidos → Comissão: R$ ", comissao:1:2)
+      totalVendas <- totalVendas + vendas[i]   // acumula o total da equipe
+   FimPara
+
+   //Total da equipe
+   Escreval("")
+   Escreval("----- TOTAL DA EQUIPE -----")
+   Escreval("Total vendido por toda a equipe: R$ ", totalVendas:1:2)
+
+fimalgoritmo
