@@ -1,0 +1,67 @@
+algoritmo "MaiorNumero"
+
+//Autor: Professora
+// Objetivo:
+// Ler 8 n�meros inteiros, armazen�-los em um vetor
+// e identificar o maior valor e sua posi��o.
+//
+// Ajuda: 1� fa�a um la�o para ler os 8 n�meros e guardar no vetor. Use duas
+// vari�veis auxiliares (maior e posicao) para guardar o maior valor
+// encontrado at� agora e em que posi��o ele apareceu. Comece considerando o
+// primeiro n�mero lido (posi��o 0) como o maior, assim voc� n�o corre o
+// risco de chutar um valor inicial errado. Depois, a cada novo n�mero lido,
+// compare com o maior atual: se for maior, atualize as duas vari�veis.
+
+
+var
+
+  numeros : vetor[0..7] de inteiro   // Vetor com 8 posi��es
+  i : inteiro
+  maior : inteiro
+  posicao : inteiro                   // Armazena a posi��o do maior valor
+
+inicio
+
+  // Leitura dos valores
+  para i de 0 ate 7 faca
+
+    escreval("")
+    escreva("Digite o ", i + 1, "� n�mero: ")
+    leia(numeros[i])
+
+    // Na primeira posi��o (�ndice 0), ainda n�o existe um maior n�mero
+    // Por isso utilizamos o primeiro valor como refer�ncia inicial.
+    se i = 0 entao
+
+      maior <- numeros[i]
+      posicao <- i
+
+    senao
+
+      // Compara o n�mero atual com o maior encontrado at� o momento
+      se numeros[i] > maior entao
+
+        // Atualiza o maior valor e a posi��o quando o "se" for verdadeiro
+        maior <- numeros[i]
+        posicao <- i
+
+      fimse
+
+    fimse
+
+  fimpara
+
+
+  // Exibir o resultado
+
+  escreval("")
+  escreval("Maior n�mero encontrado: ", maior)
+
+  // A posi��o do vetor come�a em 0.
+  escreval("�ndice do vetor: ", posicao)
+
+
+  // a ordem iniciando em 1, nao da pra dizer que foi a 0 posi��o.
+  escreval("Foi o ", posicao + 1, "� n�mero informado.")
+
+fimalgoritmo

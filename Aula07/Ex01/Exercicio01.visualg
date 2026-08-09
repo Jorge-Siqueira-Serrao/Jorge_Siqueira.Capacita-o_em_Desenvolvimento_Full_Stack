@@ -1,0 +1,75 @@
+algoritmo "Exercicio01"
+
+//Autor: Professora
+// Objetivo:
+// Ler 5 notas, armazen�-las em um vetor,
+// exibir na ordem em que foram cadastradas
+// e depois em ordem decrescente.
+
+// Ajuda: 1� fa�a um la�o para ler as notas e guardar no vetor; depois fa�a um
+// la�o para exibir as notas. Para a ordem decrescente, compare cada posi��o
+// com todas as posi��es que v�m depois dela (use dois la�os: o la�o externo
+// escolhe a posi��o atual; o la�o interno procura um valor maior nas
+// posi��es seguintes e troca as duas posi��es sempre que encontra).
+
+
+var
+
+  notas : vetor[0..4] de real   // Vetor que armazenar� as notas
+  i, j : inteiro  // Vari�veis de controle dos la�os
+  aux : real // Vari�vel auxiliar para realizar as trocas
+
+inicio
+
+  // Leitura das notas
+  para i de 0 ate 4 faca
+
+    escreva("Digite a nota do aluno ", i + 1, ": ")
+    leia(notas[i])
+
+  fimpara
+
+
+  // Notas na ordem informada
+  escreval("")
+  escreval("Notas na ordem em que foram informadas:")
+
+  para i de 0 ate 4 faca
+
+    escreval("Aluno ", i + 1, ": ", notas[i]:4:1)
+
+  fimpara
+
+
+  // Vetor em ordem decrescente
+  // Compara cada elemento com os demais
+  para i de 0 ate 3 faca
+
+    para j de i + 1 ate 4 faca
+
+      // Se encontrar um valor maior,
+      // troca as posi��es dos elementos
+      se notas[j] > notas[i] entao
+
+        aux <- notas[i]
+        notas[i] <- notas[j]
+        notas[j] <- aux
+
+      fimse
+
+    fimpara
+
+  fimpara
+
+
+  // Vetor ordenado
+  escreval("")
+  escreval("Notas em ordem decrescente:")
+
+  para i de 0 ate 4 faca
+
+    escreval(notas[i]:4:1)
+
+  fimpara
+
+fimalgoritmo

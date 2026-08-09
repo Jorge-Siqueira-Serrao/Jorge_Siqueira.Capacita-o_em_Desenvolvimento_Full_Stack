@@ -1,0 +1,54 @@
+algoritmo "Desafio04"
+
+// Autor(a): Jorge Siqueira Serrão
+// Data: 09/08/2026
+
+//Desafio 4 —Reposição de estoque:Crie um algoritmo que simule a reposição automática do estoque de um produto.
+//O algoritmo deve receber a quantidade atual em estoque, a quantidade mínima de segurança e a quantidade reposta a cada pedido
+//feito ao fornecedor. Enquanto a quantidade em estoque estiver abaixo da mínima, o algoritmo deve repor o estoque e contar quantos
+//pedidos foram necessários. Ao final, exibir a quantidade final em estoque e o número total de pedidos realizados.
+
+var
+   estoqueAtual, estoqueMinimo, reposicao: Inteiro   // quantidades em unidades
+   pedidos: Inteiro                                  // contador de pedidos feitos
+
+inicio
+   // ----- Entrada de dados -----
+   Escreval("===== REPOSIÇÃO DE ESTOQUE =====")
+   Escreval("Digite a quantidade atual em estoque: ")
+   Leia(estoqueAtual)
+   Escreval("Digite a quantidade mínima de segurança: ")
+   Leia(estoqueMinimo)
+   Escreval("Digite a quantidade reposta a cada pedido: ")
+   Leia(reposicao)
+
+   // Validação da reposição
+   // Se a reposição for zero ou negativa, não é possível aumentar o estoque.
+   Se (reposicao <= 0) entao
+      Escreval("ERRO: A quantidade reposta deve ser maior que zero.")
+   Senao
+      // Inicializa o contador de pedidos
+      pedidos <- 0
+
+      // Reposição enquanto o estoque estiver abaixo do mínimo
+      Enquanto (estoqueAtual < estoqueMinimo) faca
+         estoqueAtual <- estoqueAtual + reposicao   // repõe o estoque
+         pedidos <- pedidos + 1                     // conta mais um pedido
+
+      FimEnquanto
+
+      //Exibição dos resultados
+      Escreval("")
+      Escreval("----- RESULTADO DA REPOSIÇÃO -----")
+      Escreval("Quantidade final em estoque: ", estoqueAtual)
+      Escreval("Número total de pedidos realizados: ", pedidos)
+
+      // Se não houve pedidos, informar que o estoque já estava adequado.
+      Se (pedidos = 0) entao
+         Escreval("O estoque já estava acima da quantidade mínima. Nenhum pedido foi necessário.")
+      Senao
+         Escreval("Estoque regularizado com sucesso!")
+      FimSe
+   FimSe
+
+fimalgoritmo
